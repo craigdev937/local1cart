@@ -38,5 +38,12 @@ export interface IData {
     thumbnail: string
 };
 
+export interface IProd {
+    products: IData[],
+    total: number,
+    skip: number,
+    limit: number
+}
+
 
 
