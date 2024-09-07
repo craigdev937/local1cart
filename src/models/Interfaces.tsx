@@ -45,5 +45,14 @@ export interface IProd {
     limit: number
 }
 
+export interface ICart extends IData {
+    quantity: number
+};
+
+export interface ICartState {
+    cartItems: ICart[],
+    total: number
+};
+
 
 
