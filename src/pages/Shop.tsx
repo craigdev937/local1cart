@@ -1,4 +1,5 @@
 import React from "react";
+import "./Shop.css";
 import { ShopAPI } from "../global/ShopAPI";
 
 export const Shop = () => {
@@ -21,18 +22,21 @@ export const Shop = () => {
             {isLoading ? (
                 <h1>Loading...</h1>
             ) : (
-                <React.Fragment>
+                <main>
                     {data!.products.map((shop) => (
-                        <aside key={shop.id}>
+                        <aside 
+                            className="shop" 
+                            key={shop.id}
+                        >
+                            <p>{shop.title}</p>
                             <img 
                                 src={shop.thumbnail} 
                                 alt={shop.title} 
                             />
-                            <h3>{shop.title}</h3>
-                            <h2>{shop.price}</h2>
+                            <h3>${shop.price}</h3>
                         </aside>
                     ))}
-                </React.Fragment>
+                </main>
             )}
         </React.Fragment>
     );
